@@ -10,7 +10,7 @@ function App() {
     const fetchData = async () => {
       console.log("ready to call");
       
-      const response = await axios.get(`${import.meta.env.VITE_NODE_BASE_URL}/user`)
+      const response = await axios.get(`${import.meta.env.VITE_NODE_BASE_URL}user`)
       const data = await response.data;
       console.log(data)
     }
