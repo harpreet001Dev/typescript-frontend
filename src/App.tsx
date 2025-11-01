@@ -7,14 +7,21 @@ import axios from 'axios'
 function App() {
   const [count, setCount] = useState(0)
 
-  useEffect(()=>{
     const fetchData = async () => {
+      console.log("ready to call");
+      
       const response = await axios.get(`${import.meta.env.VITE_NODE_BASE_URL}/user`)
       const data = await response.data;
       console.log(data)
     }
+
+  const CallApi=()=>{
+    console.log("calling api");
+    
     fetchData();
-  },[])
+    console.log("api calling done");
+    
+  }
 
   return (
     <>
@@ -38,6 +45,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <button onClick={CallApi}>Call Api</button>
     </>
   )
 }
